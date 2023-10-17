@@ -1,0 +1,33 @@
+
+<div class="row mb-2 mt-2">
+  <div class="col-lg-3">
+      <button class="btn btn-light" (click)="new()">Crear profesor</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+      <table class="table">
+          <thead class="table-dark">
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Especialidad</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let profesor of listProfesores">
+                  <th >{{ profesor.id }}</th>
+                  <th >{{ profesor.nombres }}</th>
+                  <th >{{ profesor.apellidos }}</th>
+                  <th >{{ profesor.especialidad.nombres }}</th>
+                  <th >
+                      <button class="btn btn-dark" (click)="edit(profesor.id)">Modificar</button>
+                      <button class="btn btn-danger" (click)="delete(profesor.id)">Eliminar</button>
+                  </th>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
