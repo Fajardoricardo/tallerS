@@ -1,0 +1,28 @@
+<div class="row mb-2 mt-2">
+    <div class="col-lg-3">
+        <button class="btn btn-light" (click)="new()">Crear especialidad</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let especialidad of listEspecialidades">
+                    <th >{{ especialidad.id }}</th>
+                    <th >{{ especialidad.nombres }}</th>
+                    <th >
+                        <button class="btn btn-dark" (click)="edit(especialidad.id)">Modificar</button>
+                        <button class="btn btn-danger" (click)="delete(especialidad.id)">Eliminar</button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -6,7 +6,6 @@ import { HelperService } from 'src/app/config/services/helper.service';
 import { Route, Router } from '@angular/router';
 import { EspecialidadService } from 'src/app/especialidades/especialidad.service';
 import { MateriaService } from 'src/app/materias/materia.service';
-import { GradosService } from 'src/app/grados/grados.service';
 import { ServiceProfesorMateriaGradoService } from '../service-profesor-materia-grado.service';
 
 
@@ -26,7 +25,7 @@ export class ProfesoresFormComponent implements OnInit {
   
   constructor(private service: ProfesoresService, private serviceProfesorMateriaGrado: ServiceProfesorMateriaGradoService,private activeRoute: ActivatedRoute,
      private helperService: HelperService, private route: Router, private serviceEspecialidades: EspecialidadService,
-     private serviceMateria: MateriaService, private serviceGrado: GradosService) { 
+     private serviceMateria: MateriaService) { 
     this.id = this.activeRoute.snapshot.params['id'];
     this.frmProfesor = new FormGroup({
       nombres: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
